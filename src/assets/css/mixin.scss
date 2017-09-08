@@ -1,12 +1,4 @@
 $ic: #ee8100;
-@mixin borderRadius($size,$color,$radius) {
-  border: $size solid $color;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-    border-radius: $radius;
-}
 
 //定位上下左右居中
 @mixin center {
