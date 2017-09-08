@@ -24,7 +24,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       extract: true
     })
   },
-  //devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].js'),
@@ -90,7 +90,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: chunks,
-      minChunks: 4 || chunks.length
+      minChunks: 3 || chunks.length
     }),
     /*
       // copy custom static assets

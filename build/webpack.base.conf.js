@@ -33,9 +33,10 @@ var webpackConfig = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      '@config': path.resolve(__dirname, '../src/config'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
+      '@server': path.resolve(__dirname, '../src/server'),
+      '@components': path.resolve(__dirname, '../src/components')
     }
   },
   module: {
@@ -44,7 +45,7 @@ var webpackConfig = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -57,7 +58,7 @@ var webpackConfig = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -79,15 +80,13 @@ var webpackConfig = {
     ]
   },
   plugins: [
-	/*
     // 提取公共模块
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors', // 公共模块的名称
-      chunks: chunks,  // chunks是需要提取的模块
-      minChunks: 4 || chunks.length //公共模块被使用的最小次数。比如配置为3，也就是同一个模块只有被3个以外的页面同时引用时才会被提取出来作为common chunks。
-
-    }),*/
-
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendors', // 公共模块的名称
+    //   chunks: chunks,  // chunks是需要提取的模块
+    //   minChunks: 3 || chunks.length //公共模块被使用的最小次数。比如配置为3，也就是同一个模块只有被3个以外的页面同时引用时才会被提取出来作为common chunks。
+    //
+    // })
   ]
 }
 
