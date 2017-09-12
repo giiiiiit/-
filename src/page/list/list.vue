@@ -1,6 +1,6 @@
 <template>
   <div id="">
-    <a href="/page/address.html">路由页面</a>
+    <div class="div" @click="toAddress">单击去路由页面</div>
   </div>
 </template>
 
@@ -17,6 +17,9 @@
     },
     // 相关操作事件
     methods: {
+      toAddress () {
+        window.location.href = 'address.html'
+      }
     }
   }
 </script>

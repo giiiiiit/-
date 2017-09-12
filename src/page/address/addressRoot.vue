@@ -2,7 +2,7 @@
   <div id="address">
     <div class="div">{{value}}</div>
     <div class="box">{{list}}</div>
-    <router-link to="/addresschange">去子路由</router-link>
+    <router-link to="address/addresschange">去子路由</router-link>
     <transition name="router-slid">
       <router-view></router-view>
     </transition>

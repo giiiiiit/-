@@ -10,11 +10,21 @@ let addresschange = r => require.ensure([], () => r(require('./addresschange.vue
 const routes = [
   {
     path: '/',
-    component: address,
+    component: App,
     children: [
       {
-        path: '/addresschange',
-        component: addresschange
+        path: '',
+        redirect: '/address'
+      },
+      {
+        path: '/address',
+        component: address,
+        children: [
+          {
+            path: '/address/addresschange',
+            component: addresschange
+          }
+        ]
       }
     ]
   }
