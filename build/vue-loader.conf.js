@@ -13,8 +13,11 @@ module.exports = {
     require('autoprefixer')({
       browsers: ['iOS >= 7', 'Android >= 4.1']
     }),
-    require('postcss-px2rem')({
-      'remUnit':75,'baseDpr':1
+    require('postcss-plugin-px2rem')({
+      rootValue: 37.5, // 这里对应的是750的设计图尺寸
+      selectorBlackList: ['html'],
+      mediaQuery: true,
+      propBlackList: ['font-size'] // 如果要保持font-size不转换
     })
   ]
 }

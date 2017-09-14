@@ -88,6 +88,16 @@ webpack
 
 还有一点要注意的，所有的目录都要求为二级，不能一个目录下为一级，另一个目录下有二级。
 
+## 移动自适应
+
+`/build/webpack.prod.conf.js` 中配置了`postcss-plugin-px2rem`
+
+因为vux 默认大小`375`,为了与`fleible.js`兼容 配置 `rootValue: 37.5`以及`propBlackList: ['font-size'] // 保持font-size不转换成rem`
+
+此时如果如果页面基准是`750`,者如果PSD图大小`100px`, 字号大小`32`,则代码编写为 `width:50px; font-size:16px` 
+
+编译结果`width` 转为了`rem` , `font-size` 保持`16px`不变
+
 ## Lib.js库使用
 
 我们做多页面开发，那肯定会涉及到全局都能调用的公共库，或者是把别人封装的库也一起打包在全局公共模块里。

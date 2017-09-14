@@ -47,6 +47,6 @@
   background: rebeccapurple;
 }
   .box{
-    font-size: 30px;/*px*/
+    font-size: 15px;
   }
 </style>
